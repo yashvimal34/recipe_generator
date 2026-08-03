@@ -1,0 +1,67 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: Inter, sans-serif;
+    background: rgb(255, 254, 252);
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    gap: 9px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    background-color: white;
+}
+
+.chef-image{
+    width: 40px;
+}
+
+.chef-text{
+    font-weight: 100;
+    font-size: 2rem;
+}
+
+main{
+    padding: 30px 30px 10px;
+}
+
+
+.add-form{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    height: 38px;
+}
+
+.add-form > input{
+    border-radius: 6px;
+    border: 1px solid #D1D5DB;
+    padding: 9px 13px;
+    box-shadow: 0px 1px 2px 0px  rgba(0, 0, 0, 0.05);
+    flex-grow: 1;
+    min-width: 15px;
+    max-width: 400px;
+}
+
+.add-form > button{
+    border-radius:6px;
+    border: none;
+    width: 150px;
+    font-size: 14px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.recipe-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

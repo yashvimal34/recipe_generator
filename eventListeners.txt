@@ -1,0 +1,18 @@
+// import React from "react";
+
+// export default function App() {
+//   function handleClick() {
+//     console.log("I was Clicked")
+//   }
+
+//   function handleMouseOver() {
+//     console.log("I was hovered!!")
+//   }
+
+//   return (
+//     <>
+//     <button onMouseOver={handleMouseOver}>Hover Me</button>
+//     <button onClick={handleClick}>Click me</button>
+//     </>
+//   )
+// }
