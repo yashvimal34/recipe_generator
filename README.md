@@ -1,16 +1,80 @@
-# React + Vite
+# Recipe Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A small React + Vite web app that generates cooking recipes from user-provided ingredients and prompts using the Hugging Face Inference API.
 
-Currently, two official plugins are available:
+This repository contains the frontend for a dynamic recipe generator built with React, Vite, and the @huggingface/inference client. The app accepts ingredient lists or prompts, sends them to a model via the Hugging Face Inference API, and renders the returned recipe using react-markdown.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Enter ingredients or a short prompt and generate a recipe
+- Uses @huggingface/inference for model-driven text generation
+- Renders Markdown output with react-markdown
+- Fast development with Vite and React 19
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the Oxlint configuration
+- React 19
+- Vite
+- @huggingface/inference
+- react-markdown
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Requirements
+
+- Node.js (recommend v18+)
+- A Hugging Face API token (see Environment Variables)
+
+## Installation
+
+1. Clone the repository:
+
+   git clone https://github.com/yashvimal34/recipe_generator.git
+   cd recipe_generator
+
+2. Install dependencies:
+
+   npm install
+
+3. Create a .env file in the project root and add your Hugging Face API token:
+
+   HUGGINGFACE_API_KEY=hf_your_api_token_here
+
+   The frontend code expects this token to be used when calling the @huggingface/inference client. Make sure not to commit your API token.
+
+## Available scripts
+
+- npm run dev — start the Vite development server
+- npm run build — build for production
+- npm run preview — locally preview the production build
+- npm run lint — run oxlint (if configured)
+
+These scripts are defined in package.json.
+
+## Usage
+
+1. Start the dev server:
+
+   npm run dev
+
+2. Open the app in your browser (Vite will print the local URL, usually http://localhost:5173).
+
+3. Enter ingredients (or a prompt) and submit to generate a recipe. The app will show the generated recipe in Markdown format.
+
+## How it works (high level)
+
+- The frontend collects user input and sends it to a serverless function or client code that uses @huggingface/inference to query a text-generation model.
+- The response from the model is treated as Markdown and rendered using react-markdown.
+
+Note: If the repository currently contains only frontend code, ensure that calls to the Hugging Face API are handled securely (for example, via a backend or serverless endpoint) so you don't expose an API token in client-side code.
+
+## Environment & Security
+
+- Do not commit secrets or API keys to the repository.
+- For production deployments, proxy API requests through a backend that stores the HUGGINGFACE_API_KEY securely.
+
+## Contributing
+
+Contributions are welcome. Open an issue or submit a pull request with a clear description of the change.
+
+## License
+
+If you want to add a license, create a LICENSE file in the repository (for example, MIT).
