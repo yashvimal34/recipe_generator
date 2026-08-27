@@ -60,6 +60,12 @@ main{
     cursor: pointer;
 }
 
+.text-ingre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .recipe-container{
     display: flex;
     justify-content: center;
